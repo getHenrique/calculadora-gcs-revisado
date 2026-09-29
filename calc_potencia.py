@@ -1,14 +1,14 @@
+# calc_potencia
+# Módulo B — Operações de potenciação e radiciação
+
+EXPONENTE_RAIZ_QUADRADA = 1 / 2
+EXPONENTE_RAIZ_CUBICA = 1 / 3
+
 def potencia(base, expoente):
-    total = 1
-    while(expoente!=0):
-        total = (total) * (base)
-        expoente -= 1
-    return total
+    return base ** expoente
 
+def raiz_quadrada(radicando):
+    return radicando ** EXPONENTE_RAIZ_QUADRADA
 
-def raiz_quadrada(numero):
-    return numero ** 0.5
-
-
-def raiz_cubica(num):
-    return num ** (1 / 3)
+def raiz_cubica(radicando):
+    return radicando ** EXPONENTE_RAIZ_CUBICA

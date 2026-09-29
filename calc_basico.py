@@ -1,27 +1,32 @@
-# calc_basico.py
+# calc_basico
 # Módulo A — Operações Básicas
-# Autor: <nome do aluno>
-# Branch: feature/modulo-basico
+
+def somar(parcela_a, parcela_b):
+    """
+    Retorna a soma da parcela a pela parcela b.
+    """
+    return parcela_a + parcela_b
 
 
-def somar(a, b):
-    """Retorna a soma de a e b."""
-    return a + b
+def subtrair(minuendo, subtraendo):
+    """
+    Retorna a diferença do minuendo pelo subtraendo.
+    """
+    return minuendo - subtraendo
 
 
-def subtrair(a, b):
-    """Retorna a diferença de a e b."""
-    return a - b
+def multiplicar(fator_a, fator_b):
+    """
+    Retorna o produto do fator a pelo fator b.
+    """
+    return fator_a * fator_b
 
-
-def multiplicar(a, b):
-    """Retorna o produto de a e b."""
-    return a * b
-
-def dividir(a, b):
-    """Retorna a divisão de a por b.
-    Lança ValueError se b == 0."""
+def dividir(dividendo, divisor):
+    """
+    Retorna a divisão do dividendo pelo divisor.
+    Lança ZeroDivisionError se b == 0.
+    """
     try:
-        return a / b
+        return dividendo / divisor
     except ZeroDivisionError:
         print("Impossível dividir por zero")

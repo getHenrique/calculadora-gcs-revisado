@@ -1,33 +1,34 @@
 # main.py — importa módulos conforme são mergeados na main
 def menu():
 
-    user_input = '0'
+    entrada_usuario = '0'
 
-    print("=== Calculadora GCS ===\n")
+    print("\n=== Calculadora GCS ===\n")
 
-    while user_input != 'x' :
+    while entrada_usuario != 'x' :
         
-        user_input = input(
+        entrada_usuario = input(
             "a - Básico\n" \
             "b - Potência\n" \
             "c - Percentual\n" \
             "d - Estatística\n" \
             "e - Conversão\n" \
-            "x - Sair\n"
+            "x - Sair\n" \
             ">> "
         )
 
-        match user_input :
+        match entrada_usuario :
             case 'a' :
                 
                 try:
 
                     from calc_basico import somar, subtrair, multiplicar, dividir
+                    
                     print("\nMódulo Básico carregado.\n")
                     
-                    while user_input != '5' :
+                    while entrada_usuario != '5' :
 
-                        user_input = input(    
+                        entrada_usuario = input(    
                             "1 - Somar\n" \
                             "2 - Subtrair\n" \
                             "3 - Multiplicar\n" \
@@ -36,7 +37,7 @@ def menu():
                             ">> "
                         )
 
-                        match user_input :
+                        match entrada_usuario :
                             case '1' :
                                 print("\nSomando A + B")
                                 print(
@@ -84,7 +85,7 @@ def menu():
                     
                 except ImportError:
                     
-                    print("Módulo Básico ainda não disponível.\n")
+                    print("Módulo Básico não foi encontrado...\n")
 
             case 'b' :
 
@@ -93,9 +94,9 @@ def menu():
                     from calc_potencia import potencia, raiz_quadrada, raiz_cubica
                     print("Módulo Potência carregado.\n")
 
-                    while user_input != '4' :
+                    while entrada_usuario != '4' :
 
-                        user_input = input(    
+                        entrada_usuario = input(    
                             "1 - Potência\n" \
                             "2 - Raiz Quadrada\n" \
                             "3 - Raiz Cúbica\n" \
@@ -103,7 +104,7 @@ def menu():
                             ">> "
                         )
 
-                        match user_input :
+                        match entrada_usuario :
                             case '1' :
                                 print("\nPotência de A^B")
                                 print(
@@ -135,18 +136,18 @@ def menu():
 
                 except ImportError:
 
-                    print("Módulo Potência ainda não disponível.\n")
+                    print("Módulo Potência não foi encontrado...\n")
                     
             case 'c' :
 
                 try:
 
-                    from calc_percentual import percentual, acrescimo, desconto
+                    from calc_percentual import porcentagem, acrescer, descontar
                     print("Módulo Percentual carregado.\n")
 
-                    while user_input != '4' :
+                    while entrada_usuario != '4' :
 
-                        user_input = input(    
+                        entrada_usuario = input(    
                             "1 - Percentual\n" \
                             "2 - Acréscimo\n" \
                             "3 - Desconto\n" \
@@ -154,12 +155,12 @@ def menu():
                             ">> "
                         )
 
-                        match user_input :
+                        match entrada_usuario :
                             case '1' :
                                 print("\nPercentual Y de X")
                                 print(
                                     "Y% de X = ",
-                                    percentual(
+                                    porcentagem(
                                         float(input("X = ")),
                                         float(input("Y% = "))
                                     ),
@@ -169,7 +170,7 @@ def menu():
                                 print("\nAcrescentar percentual Y à X")
                                 print(
                                     "X + (X de Y%) = ",
-                                    acrescimo(
+                                    acrescer(
                                         float(input("X = ")),
                                         float(input("Y% = "))
                                     ),
@@ -179,7 +180,7 @@ def menu():
                                 print("\nDescontar percentual Y de X")
                                 print(
                                     "X - (X de Y%) = ",
-                                    desconto(
+                                    descontar(
                                         float(input("X = ")),
                                         float(input("Y% = "))
                                     ),
@@ -192,7 +193,7 @@ def menu():
 
                 except ImportError:
 
-                    print("Módulo Percentual ainda não disponível.\n")
+                    print("Módulo Percentual não foi encontrado...\n")
 
             case 'd' :
 
@@ -201,9 +202,9 @@ def menu():
                     from calc_estatistica import media, mediana, desvio_padrao
                     print("Módulo Estatística carregado.\n")
 
-                    while user_input != '4' :
+                    while entrada_usuario != '4' :
 
-                        user_input = input(    
+                        entrada_usuario = input(    
                             "1 - Média\n" \
                             "2 - Mediana\n" \
                             "3 - Desvio Padrão\n" \
@@ -211,7 +212,7 @@ def menu():
                             ">> "
                         )
 
-                        match user_input :
+                        match entrada_usuario :
                             case '1' :
                                 print("\nMédia de um conjunto de números")
                                 conjunto_estatistica = input("Insira os números da conjunto separados por espaço:\n").split()
@@ -234,18 +235,18 @@ def menu():
                         
                 except ImportError:
 
-                    print("Módulo Estatística ainda não disponível.\n")
+                    print("Módulo Estatística não foi encontrado...\n")
 
             case 'e' :
 
                 try:
 
-                    from calc_conversao import celsius_para_fahrenheit, km_para_milhas, kg_para_libras
+                    from calc_conversao import converter_celsius_fahrenheit, converter_quilometros_milhas, converter_quilogramas_libras
                     print("Módulo Conversão carregado.\n")
 
-                    while user_input != '4' :
+                    while entrada_usuario != '4' :
 
-                        user_input = input(    
+                        entrada_usuario = input(    
                             "1 - Celsisus para Fahrenheit\n" \
                             "2 - km para milhas\n" \
                             "3 - kg para libras\n" \
@@ -253,12 +254,12 @@ def menu():
                             ">> "
                         )
 
-                        match user_input :
+                        match entrada_usuario :
                             case '1' :
                                 print("\nXºC para XºF")
                                 print(
                                     "XºF = ",
-                                    celsius_para_fahrenheit(
+                                    converter_celsius_fahrenheit(
                                         float(input("XºC = ")),
                                     ),
                                     "\n"
@@ -267,7 +268,7 @@ def menu():
                                 print("\nXkm para X milhas")
                                 print(
                                     "X milhas = ",
-                                    km_para_milhas(
+                                    converter_quilometros_milhas(
                                         float(input("Xkm = ")),
                                     ),
                                     "\n"
@@ -276,7 +277,7 @@ def menu():
                                 print("\nXkg para X libras")
                                 print(
                                     "X libras = ",
-                                    kg_para_libras(
+                                    converter_quilogramas_libras(
                                         float(input("Xkg = ")),
                                     ),
                                     "\n"
@@ -288,7 +289,7 @@ def menu():
 
                 except ImportError:
 
-                    print("Módulo Percentual ainda não disponível.\n")
+                    print("Módulo Percentual não foi encontrado...\n")
 
             case 'x' :
                 print("Tenha um ótimo dia! :)")
