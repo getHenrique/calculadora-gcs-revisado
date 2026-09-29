@@ -1,5 +1,4 @@
-# main.py — importa módulos conforme são mergeados na main
-
+# main menu
 
 def menu():
 
@@ -244,7 +243,7 @@ def menu():
 
             case 'e':
                 try:
-                    from calc_conversion import convert_celsius_fahrenheit, convert_kilometers_meters, convert_kilograms_pounds
+                    from calc_conversion import convert_celsius_fahrenheit, convert_kilometers_miles, convert_kilograms_pounds
                     print("Módulo Conversão carregado.\n")
 
                     while user_input != '4':
@@ -269,7 +268,7 @@ def menu():
                                 print("\nXkm para X milhas")
                                 print(
                                     "X milhas = ",
-                                    convert_kilometers_meters(
+                                    convert_kilometers_miles(
                                         float(input("Xkm = ")),
                                     ),
                                     "\n"
