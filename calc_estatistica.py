@@ -3,19 +3,25 @@
 
 from calc_potencia import raiz_quadrada
 
+
 def media(conjunto):
+
+
+    """ Retorna a média de um conjunto de números.
     """
-    Retorna a média de um conjunto de números.
-    """
+
     if not conjunto:
         raise ValueError("O conjunto não pode estar vazio.")
     else:
         return sum(conjunto) / len(conjunto)
 
+
 def mediana(conjunto):
+
+
+    """ Retorna a mediana de um conjunto de números.
     """
-    Retorna a mediana de um conjunto de números.
-    """
+
     if not conjunto:
         raise ValueError("O conjunto não pode estar vazio.")
     else:
@@ -26,10 +32,13 @@ def mediana(conjunto):
         else:
             return conjunto_ordenado[tamanho_conjunto // 2]
 
+
 def desvio_padrao(conjunto):
+
+    
+    """ Retorna o desvio padrão de um conjunto de números.
     """
-    Retorna o desvio padrão de um conjunto de números.
-    """
+
     if not conjunto:
         raise ValueError("O conjunto não pode estar vazio.")
     else:

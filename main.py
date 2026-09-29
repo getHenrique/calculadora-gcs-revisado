@@ -1,12 +1,14 @@
 # main.py — importa módulos conforme são mergeados na main
+
+
 def menu():
+
 
     entrada_usuario = '0'
 
     print("\n=== Calculadora GCS ===\n")
 
-    while entrada_usuario != 'x' :
-        
+    while entrada_usuario != 'x':
         entrada_usuario = input(
             "a - Básico\n" \
             "b - Potência\n" \
@@ -17,17 +19,13 @@ def menu():
             ">> "
         )
 
-        match entrada_usuario :
-            case 'a' :
-                
+        match entrada_usuario:
+            case 'a':
                 try:
-
                     from calc_basico import somar, subtrair, multiplicar, dividir
-                    
                     print("\nMódulo Básico carregado.\n")
                     
-                    while entrada_usuario != '5' :
-
+                    while entrada_usuario != '5':
                         entrada_usuario = input(    
                             "1 - Somar\n" \
                             "2 - Subtrair\n" \
@@ -36,9 +34,8 @@ def menu():
                             "5 - Cancelar operação\n" \
                             ">> "
                         )
-
-                        match entrada_usuario :
-                            case '1' :
+                        match entrada_usuario:
+                            case '1':
                                 print("\nSomando A + B")
                                 print(
                                     "A + B = ",
@@ -48,7 +45,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '2' :
+                            case '2':
                                 print("\nSubtraindo A - B")
                                 print(
                                     "A - B = ",
@@ -58,7 +55,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '3' :
+                            case '3':
                                 print("\nMultiplicando A * B")
                                 print(
                                     "A * B = ",
@@ -68,7 +65,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '4' :
+                            case '4':
                                 print("\nDividindo A / B")
                                 print(
                                     "A / B = ",
@@ -78,24 +75,20 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '5' :
+                            case '5':
                                 print("Saindo do módulo...\n")
-                            case _ :
+                            case _:
                                 print("Input inválido\n")
-                    
-                except ImportError:
-                    
+                
+                except ImportError: 
                     print("Módulo Básico não foi encontrado...\n")
 
-            case 'b' :
-
+            case 'b':
                 try:
-
                     from calc_potencia import potencia, raiz_quadrada, raiz_cubica
                     print("Módulo Potência carregado.\n")
 
-                    while entrada_usuario != '4' :
-
+                    while entrada_usuario != '4':
                         entrada_usuario = input(    
                             "1 - Potência\n" \
                             "2 - Raiz Quadrada\n" \
@@ -103,9 +96,8 @@ def menu():
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-
-                        match entrada_usuario :
-                            case '1' :
+                        match entrada_usuario:
+                            case '1':
                                 print("\nPotência de A^B")
                                 print(
                                     "A^B = ",
@@ -115,38 +107,34 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '2' :
+                            case '2':
                                 print("\nRaiz quadrada de X")
                                 print(
                                     "√X = ",
                                     raiz_quadrada(float(input("X = "))),
                                     "\n"
                                 )
-                            case '3' :
+                            case '3':
                                 print("\nRaiz cúbica de X")
                                 print(
                                     "∛X = ",
                                     raiz_cubica(float(input("X = "))),
                                     "\n"
                                 )
-                            case '4' :
+                            case '4':
                                 print("Saindo do módulo...\n")
-                            case _ :
+                            case _:
                                 print("Input inválido\n")
 
                 except ImportError:
-
                     print("Módulo Potência não foi encontrado...\n")
                     
-            case 'c' :
-
+            case 'c':
                 try:
-
                     from calc_percentual import porcentagem, acrescer, descontar
                     print("Módulo Percentual carregado.\n")
 
-                    while entrada_usuario != '4' :
-
+                    while entrada_usuario != '4':
                         entrada_usuario = input(    
                             "1 - Percentual\n" \
                             "2 - Acréscimo\n" \
@@ -154,9 +142,8 @@ def menu():
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-
-                        match entrada_usuario :
-                            case '1' :
+                        match entrada_usuario:
+                            case '1':
                                 print("\nPercentual Y de X")
                                 print(
                                     "Y% de X = ",
@@ -166,7 +153,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '2' :
+                            case '2':
                                 print("\nAcrescentar percentual Y à X")
                                 print(
                                     "X + (X de Y%) = ",
@@ -176,7 +163,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '3' :
+                            case '3':
                                 print("\nDescontar percentual Y de X")
                                 print(
                                     "X - (X de Y%) = ",
@@ -186,24 +173,20 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '4' :
+                            case '4':
                                 print("Saindo do módulo...\n")
-                            case _ :
+                            case _:
                                 print("Input inválido\n")
 
                 except ImportError:
-
                     print("Módulo Percentual não foi encontrado...\n")
 
-            case 'd' :
-
+            case 'd':
                 try:
-
                     from calc_estatistica import media, mediana, desvio_padrao
                     print("Módulo Estatística carregado.\n")
 
-                    while entrada_usuario != '4' :
-
+                    while entrada_usuario != '4':
                         entrada_usuario = input(    
                             "1 - Média\n" \
                             "2 - Mediana\n" \
@@ -211,41 +194,36 @@ def menu():
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-
-                        match entrada_usuario :
-                            case '1' :
+                        match entrada_usuario:
+                            case '1':
                                 print("\nMédia de um conjunto de números")
-                                conjunto_estatistica = input("Insira os números da conjunto separados por espaço:\n").split()
-                                conjunto_estatistica = [float(x) for x in conjunto_estatistica]
-                                print("Média de ", conjunto_estatistica, " = ", media(conjunto_estatistica), "\n")
-                            case '2' :
+                                conjunto = input("Insira os números do conjunto separados por espaço:\n").split()
+                                conjunto = [float(x) for x in conjunto]
+                                print("Média de ", conjunto, " = ", media(conjunto), "\n")
+                            case '2':
                                 print("\nMediana de uma conjunto de números")
-                                conjunto_estatistica = input("Insira os números da conjunto separados por espaço:\n").split()
-                                conjunto_estatistica = [float(x) for x in conjunto_estatistica]
-                                print("Mediana de ", conjunto_estatistica, " = ", mediana(conjunto_estatistica), "\n")
-                            case '3' :
+                                conjunto = input("Insira os números da conjunto separados por espaço:\n").split()
+                                conjunto = [float(x) for x in conjunto]
+                                print("Mediana de ", conjunto, " = ", mediana(conjunto), "\n")
+                            case '3':
                                 print("\nDesvio padrão populacional de uma conjunto de números")
-                                conjunto_estatistica = input("Insira os números da conjunto separados por espaço:\n").split()
-                                conjunto_estatistica = [float(x) for x in conjunto_estatistica]
-                                print("Desvio Padrão populacional de ", conjunto_estatistica, " = ", desvio_padrao(conjunto_estatistica), "\n")
-                            case '4' :
+                                conjunto = input("Insira os números da conjunto separados por espaço:\n").split()
+                                conjunto = [float(x) for x in conjunto]
+                                print("Desvio Padrão populacional de ", conjunto, " = ", desvio_padrao(conjunto), "\n")
+                            case '4':
                                 print("Saindo do módulo...\n")
-                            case _ :
+                            case _:
                                 print("Input inválido\n")
                         
                 except ImportError:
-
                     print("Módulo Estatística não foi encontrado...\n")
 
-            case 'e' :
-
+            case 'e':
                 try:
-
                     from calc_conversao import converter_celsius_fahrenheit, converter_quilometros_milhas, converter_quilogramas_libras
                     print("Módulo Conversão carregado.\n")
 
-                    while entrada_usuario != '4' :
-
+                    while entrada_usuario != '4':
                         entrada_usuario = input(    
                             "1 - Celsisus para Fahrenheit\n" \
                             "2 - km para milhas\n" \
@@ -253,9 +231,8 @@ def menu():
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-
-                        match entrada_usuario :
-                            case '1' :
+                        match entrada_usuario:
+                            case '1':
                                 print("\nXºC para XºF")
                                 print(
                                     "XºF = ",
@@ -264,7 +241,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '2' :
+                            case '2':
                                 print("\nXkm para X milhas")
                                 print(
                                     "X milhas = ",
@@ -273,7 +250,7 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '3' :
+                            case '3':
                                 print("\nXkg para X libras")
                                 print(
                                     "X libras = ",
@@ -282,19 +259,19 @@ def menu():
                                     ),
                                     "\n"
                                 )
-                            case '4' :
+                            case '4':
                                 print("Saindo do módulo...\n")
-                            case _ :
+                            case _:
                                 print("Input inválido\n")
 
                 except ImportError:
-
                     print("Módulo Percentual não foi encontrado...\n")
 
-            case 'x' :
+            case 'x':
                 print("Tenha um ótimo dia! :)")
                 break
-            case _ :
+            
+            case _:
                 print("Input inválido\n")
 
 if __name__ == "__main__":
