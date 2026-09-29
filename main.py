@@ -4,12 +4,12 @@
 def menu():
 
 
-    entrada_usuario = '0'
+    user_input = '0'
 
     print("\n=== Calculadora GCS ===\n")
 
-    while entrada_usuario != 'x':
-        entrada_usuario = input(
+    while user_input != 'x':
+        user_input = input(
             "a - Básico\n" \
             "b - Potência\n" \
             "c - Percentual\n" \
@@ -19,14 +19,14 @@ def menu():
             ">> "
         )
 
-        match entrada_usuario:
+        match user_input:
             case 'a':
                 try:
-                    from calc_basico import somar, subtrair, multiplicar, dividir
+                    from calc_basics import add, subtract, multiply, divide
                     print("\nMódulo Básico carregado.\n")
                     
-                    while entrada_usuario != '5':
-                        entrada_usuario = input(    
+                    while user_input != '5':
+                        user_input = input(    
                             "1 - Somar\n" \
                             "2 - Subtrair\n" \
                             "3 - Multiplicar\n" \
@@ -34,12 +34,12 @@ def menu():
                             "5 - Cancelar operação\n" \
                             ">> "
                         )
-                        match entrada_usuario:
+                        match user_input:
                             case '1':
                                 print("\nSomando A + B")
                                 print(
                                     "A + B = ",
-                                    somar(
+                                    add(
                                         float(input("A = ")),
                                         float(input("B = "))
                                     ),
@@ -49,7 +49,7 @@ def menu():
                                 print("\nSubtraindo A - B")
                                 print(
                                     "A - B = ",
-                                    subtrair(
+                                    subtract(
                                         float(input("A = ")),
                                         float(input("B = "))
                                     ),
@@ -59,7 +59,7 @@ def menu():
                                 print("\nMultiplicando A * B")
                                 print(
                                     "A * B = ",
-                                    multiplicar(
+                                    multiply(
                                         float(input("A = ")),
                                         float(input("B = "))
                                     ),
@@ -69,7 +69,7 @@ def menu():
                                 print("\nDividindo A / B")
                                 print(
                                     "A / B = ",
-                                    dividir(
+                                    divide(
                                         float(input("A = ")),
                                         float(input("B = "))
                                     ),
@@ -85,23 +85,23 @@ def menu():
 
             case 'b':
                 try:
-                    from calc_potencia import potencia, raiz_quadrada, raiz_cubica
+                    from calc_exponenciation import to_power_of, square_root_of, cube_root_of
                     print("Módulo Potência carregado.\n")
 
-                    while entrada_usuario != '4':
-                        entrada_usuario = input(    
+                    while user_input != '4':
+                        user_input = input(    
                             "1 - Potência\n" \
                             "2 - Raiz Quadrada\n" \
                             "3 - Raiz Cúbica\n" \
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-                        match entrada_usuario:
+                        match user_input:
                             case '1':
                                 print("\nPotência de A^B")
                                 print(
                                     "A^B = ",
-                                    potencia(
+                                    to_power_of(
                                         float(input("A = ")),
                                         float(input("B = "))
                                     ),
@@ -111,14 +111,14 @@ def menu():
                                 print("\nRaiz quadrada de X")
                                 print(
                                     "√X = ",
-                                    raiz_quadrada(float(input("X = "))),
+                                    square_root_of(float(input("X = "))),
                                     "\n"
                                 )
                             case '3':
                                 print("\nRaiz cúbica de X")
                                 print(
                                     "∛X = ",
-                                    raiz_cubica(float(input("X = "))),
+                                    cube_root_of(float(input("X = "))),
                                     "\n"
                                 )
                             case '4':
@@ -131,23 +131,23 @@ def menu():
                     
             case 'c':
                 try:
-                    from calc_percentual import porcentagem, acrescer, descontar
+                    from calc_percentage import percentage_of, increase, discount
                     print("Módulo Percentual carregado.\n")
 
-                    while entrada_usuario != '4':
-                        entrada_usuario = input(    
+                    while user_input != '4':
+                        user_input = input(    
                             "1 - Percentual\n" \
                             "2 - Acréscimo\n" \
                             "3 - Desconto\n" \
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-                        match entrada_usuario:
+                        match user_input:
                             case '1':
                                 print("\nPercentual Y de X")
                                 print(
                                     "Y% de X = ",
-                                    porcentagem(
+                                    percentage_of(
                                         float(input("X = ")),
                                         float(input("Y% = "))
                                     ),
@@ -157,7 +157,7 @@ def menu():
                                 print("\nAcrescentar percentual Y à X")
                                 print(
                                     "X + (X de Y%) = ",
-                                    acrescer(
+                                    increase(
                                         float(input("X = ")),
                                         float(input("Y% = "))
                                     ),
@@ -167,7 +167,7 @@ def menu():
                                 print("\nDescontar percentual Y de X")
                                 print(
                                     "X - (X de Y%) = ",
-                                    descontar(
+                                    discount(
                                         float(input("X = ")),
                                         float(input("Y% = "))
                                     ),
@@ -183,33 +183,57 @@ def menu():
 
             case 'd':
                 try:
-                    from calc_estatistica import media, mediana, desvio_padrao
+                    from calc_statistics import average, median, standard_deviation
                     print("Módulo Estatística carregado.\n")
 
-                    while entrada_usuario != '4':
-                        entrada_usuario = input(    
+                    while user_input != '4':
+                        user_input = input(    
                             "1 - Média\n" \
                             "2 - Mediana\n" \
                             "3 - Desvio Padrão\n" \
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-                        match entrada_usuario:
+                        match user_input:
                             case '1':
                                 print("\nMédia de um conjunto de números")
-                                conjunto = input("Insira os números do conjunto separados por espaço:\n").split()
-                                conjunto = [float(x) for x in conjunto]
-                                print("Média de ", conjunto, " = ", media(conjunto), "\n")
+                                set = input(
+                                    "Insira os números do conjunto separados por espaço:\n"
+                                ).split()
+                                set = [float(value) for value in set]
+                                print(
+                                    "Média de ",
+                                    set,
+                                    " = ",
+                                    average(set),
+                                    "\n"
+                                )
                             case '2':
-                                print("\nMediana de uma conjunto de números")
-                                conjunto = input("Insira os números da conjunto separados por espaço:\n").split()
-                                conjunto = [float(x) for x in conjunto]
-                                print("Mediana de ", conjunto, " = ", mediana(conjunto), "\n")
+                                print("\nMediana de um conjunto de números")
+                                set = input(
+                                    "Insira os números do conjunto separados por espaço:\n"
+                                ).split()
+                                set = [float(value) for value in set]
+                                print(
+                                    "Mediana de ",
+                                    set,
+                                    " = ",
+                                    median(set),
+                                    "\n"
+                                )
                             case '3':
-                                print("\nDesvio padrão populacional de uma conjunto de números")
-                                conjunto = input("Insira os números da conjunto separados por espaço:\n").split()
-                                conjunto = [float(x) for x in conjunto]
-                                print("Desvio Padrão populacional de ", conjunto, " = ", desvio_padrao(conjunto), "\n")
+                                print("\nDesvio padrão populacional de um conjunto de números")
+                                set = input(
+                                    "Insira os números do conjunto separados por espaço:\n"
+                                ).split()
+                                set = [float(value) for value in set]
+                                print(
+                                    "Desvio Padrão populacional de ",
+                                    set,
+                                    " = ",
+                                    standard_deviation(set),
+                                    "\n"
+                                )
                             case '4':
                                 print("Saindo do módulo...\n")
                             case _:
@@ -220,23 +244,23 @@ def menu():
 
             case 'e':
                 try:
-                    from calc_conversao import converter_celsius_fahrenheit, converter_quilometros_milhas, converter_quilogramas_libras
+                    from calc_conversion import convert_celsius_fahrenheit, convert_kilometers_meters, convert_kilograms_pounds
                     print("Módulo Conversão carregado.\n")
 
-                    while entrada_usuario != '4':
-                        entrada_usuario = input(    
+                    while user_input != '4':
+                        user_input = input(    
                             "1 - Celsisus para Fahrenheit\n" \
                             "2 - km para milhas\n" \
                             "3 - kg para libras\n" \
                             "4 - Cancelar operação\n" \
                             ">> "
                         )
-                        match entrada_usuario:
+                        match user_input:
                             case '1':
                                 print("\nXºC para XºF")
                                 print(
                                     "XºF = ",
-                                    converter_celsius_fahrenheit(
+                                    convert_celsius_fahrenheit(
                                         float(input("XºC = ")),
                                     ),
                                     "\n"
@@ -245,7 +269,7 @@ def menu():
                                 print("\nXkm para X milhas")
                                 print(
                                     "X milhas = ",
-                                    converter_quilometros_milhas(
+                                    convert_kilometers_meters(
                                         float(input("Xkm = ")),
                                     ),
                                     "\n"
@@ -254,7 +278,7 @@ def menu():
                                 print("\nXkg para X libras")
                                 print(
                                     "X libras = ",
-                                    converter_quilogramas_libras(
+                                    convert_kilograms_pounds(
                                         float(input("Xkg = ")),
                                     ),
                                     "\n"
