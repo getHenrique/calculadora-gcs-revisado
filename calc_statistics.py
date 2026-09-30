@@ -5,9 +5,8 @@ from calc_exponenciation import extract_square_root
 
 
 def average(number_set):
-
-
     """Returns the average of a set of values."""
+
 
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
@@ -16,9 +15,8 @@ def average(number_set):
 
 
 def median(number_set):
-
-
     """Returns the median of a set of values."""
+
 
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
@@ -35,9 +33,8 @@ def median(number_set):
 
 
 def standard_deviation(number_set):
-
-    
     """Returns the standard deviation of a set of values."""
+    
 
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
