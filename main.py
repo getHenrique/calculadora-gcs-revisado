@@ -1,25 +1,25 @@
 # main menu
 
-from calc_basics import *
-from calc_exponenciation import *
-from calc_percentage import *
-from calc_statistics import *
-from calc_conversion import *
+from calc_basics import basics_menu
+from calc_exponenciation import exponenciation_menu
+from calc_percentage import percentage_menu
+from calc_statistics import statistics_menu
+from calc_conversion import conversion_menu
+
 
 def main_menu():
-
 
     user_input = '0'
 
     print("\n=== Calculadora GCS ===\n")
     while user_input != 'x':
         user_input = input(
-            "a - Básico\n",
-            "b - Potência\n",
-            "c - Percentual\n",
-            "d - Estatística\n",
-            "e - Conversão\n",
-            "x - Sair\n",
+            "a - Básico\n"
+            "b - Potência\n"
+            "c - Percentual\n"
+            "d - Estatística\n"
+            "e - Conversão\n"
+            "x - Sair\n"
             ">> "
         )
         match user_input:
@@ -38,6 +38,7 @@ def main_menu():
                 break
             case _:
                 print("Input inválido\n")
+
 
 if __name__ == "__main__":
     main_menu()
