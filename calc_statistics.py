@@ -34,7 +34,7 @@ def median(number_set):
 
 def standard_deviation(number_set):
     """Returns the standard deviation of a set of values."""
-    
+
 
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
@@ -44,3 +44,63 @@ def standard_deviation(number_set):
                 ((value - average(number_set)) ** 2) for value in number_set
             ) / len(number_set)
         )
+
+
+def statistics_menu():
+
+
+    user_input = '0'
+
+    while user_input != '4':
+        user_input = input(    
+            "1 - Média\n",
+            "2 - Mediana\n",
+            "3 - Desvio Padrão\n",
+            "4 - Cancelar operação\n",
+            ">> "
+        )
+        match user_input:
+            case '1':
+                print("\nMédia de um conjunto de números")
+                number_set = input(
+                    "Insira os números do conjunto separados por espaço:\n"
+                ).split()
+                number_set = [float(value) for value in number_set]
+                print(
+                    "Média de ",
+                    number_set,
+                    " = ",
+                    average(number_set),
+                    "\n"
+                )
+            case '2':
+                print("\nMediana de um conjunto de números")
+                number_set = input(
+                    "Insira os números do conjunto separados por espaço:\n"
+                ).split()
+                number_set = [float(value) for value in number_set]
+                print(
+                    "Mediana de ",
+                    number_set,
+                    " = ",
+                    median(number_set),
+                    "\n"
+                )
+            case '3':
+                print("\nDesvio padrão populacional de um conjunto de números")
+                number_set = input(
+                    "Insira os números do conjunto separados por espaço:\n"
+                ).split()
+                number_set = [float(value) for value in number_set]
+                print(
+                    "Desvio Padrão populacional de ",
+                    number_set,
+                    " = ",
+                    standard_deviation(number_set),
+                    "\n"
+                )
+            case '4':
+                print("Saindo do módulo...\n")
+                break
+            case _:
+                print("Input inválido\n")

@@ -34,3 +34,65 @@ def divide(dividend, divisor):
         return dividend / divisor
     except ZeroDivisionError:
         print("É impossível dividir por zero.")
+
+
+def basics_menu():
+
+
+    user_input = '0'
+
+    while user_input != '5':
+        user_input = input(    
+            "1 - Somar\n",
+            "2 - Subtrair\n",
+            "3 - Multiplicar\n",
+            "4 - Dividir\n",
+            "5 - Cancelar operação\n",
+            ">> "
+        )
+        match user_input:
+            case '1':
+                print("\nSomando A + B")
+                print(
+                    "A + B = ",
+                    add(
+                        float(input("A = ")),
+                        float(input("B = "))
+                    ),
+                    "\n"
+                )
+            case '2':
+                print("\nSubtraindo A - B")
+                print(
+                    "A - B = ",
+                    subtract(
+                        float(input("A = ")),
+                        float(input("B = "))
+                    ),
+                    "\n"
+                )
+            case '3':
+                print("\nMultiplicando A * B")
+                print(
+                    "A * B = ",
+                    multiply(
+                        float(input("A = ")),
+                        float(input("B = "))
+                    ),
+                    "\n"
+                )
+            case '4':
+                print("\nDividindo A / B")
+                print(
+                    "A / B = ",
+                    divide(
+                        float(input("A = ")),
+                        float(input("B = "))
+                    ),
+                    "\n"
+                )
+            case '5':
+                print("Saindo do módulo...\n")
+                break
+            case _:
+                print("Input inválido\n")
