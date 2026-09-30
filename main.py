@@ -174,41 +174,41 @@ def menu():
                     match user_input:
                         case '1':
                             print("\nMédia de um conjunto de números")
-                            set = input(
+                            number_set = input(
                                 "Insira os números do conjunto separados por espaço:\n"
                             ).split()
-                            set = [float(value) for value in set]
+                            number_set = [float(value) for value in number_set]
                             print(
                                 "Média de ",
-                                set,
+                                number_set,
                                 " = ",
-                                average(set),
+                                average(number_set),
                                 "\n"
                             )
                         case '2':
                             print("\nMediana de um conjunto de números")
-                            set = input(
+                            number_set = input(
                                 "Insira os números do conjunto separados por espaço:\n"
                             ).split()
-                            set = [float(value) for value in set]
+                            number_set = [float(value) for value in number_set]
                             print(
                                 "Mediana de ",
-                                set,
+                                number_set,
                                 " = ",
-                                median(set),
+                                median(number_set),
                                 "\n"
                             )
                         case '3':
                             print("\nDesvio padrão populacional de um conjunto de números")
-                            set = input(
+                            number_set = input(
                                 "Insira os números do conjunto separados por espaço:\n"
                             ).split()
-                            set = [float(value) for value in set]
+                            number_set = [float(value) for value in number_set]
                             print(
                                 "Desvio Padrão populacional de ",
-                                set,
+                                number_set,
                                 " = ",
-                                standard_deviation(set),
+                                standard_deviation(number_set),
                                 "\n"
                             )
                         case '4':
