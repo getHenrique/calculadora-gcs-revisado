@@ -81,14 +81,17 @@ def basics_menu():
             case '4':
                 print("\nDividindo A / B")
                 value_input_a, value_input_b = get_two_floats()
-                print(
-                    "A / B = ",
-                    divide(
-                        value_input_a,
-                        value_input_b
-                    ),
-                    "\n"
-                )
+                try:
+                    print(
+                        "A / B = ",
+                        divide(
+                            value_input_a,
+                            value_input_b
+                        ),
+                        "\n"
+                    )
+                except ValueError as e:
+                    print(f"Erro: {e}\n")
             case '5':
                 print("Saindo do módulo...\n")
                 break
