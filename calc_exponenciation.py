@@ -3,28 +3,28 @@
 
 from value_inputs import get_single_float, get_two_floats
 
-SQUARE_ROOT_EXPONENT = 1 / 2
-CUBE_ROOT_EXPONENT = 1 / 3
+SQUARE_ROOT_EXPONENT: float = 1 / 2
+CUBE_ROOT_EXPONENT: float = 1 / 3
 
 
-def to_power_of(base, exponent):
+def to_power_of(base: float, exponent: float) -> float:
     """Returns the base to the power of the expoent."""
     return base ** exponent
 
 
-def square_root_of(radicand):
+def square_root_of(radicand: float) -> float:
     """Returns the square root of the radicand."""
     return radicand ** SQUARE_ROOT_EXPONENT
 
 
-def cube_root_of(radicand):
+def cube_root_of(radicand: float) -> float:
     """Returns the cube root of the radicand."""
     return radicand ** CUBE_ROOT_EXPONENT
 
 
 def exponenciation_menu():
 
-    user_input: str
+    user_input: str = '0'
     value_input_a: float
     value_input_b: float
     value_input_x: float

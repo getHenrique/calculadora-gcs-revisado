@@ -3,15 +3,15 @@
 
 from value_inputs import get_two_floats
 
-PERCENT = 100
+PERCENT: float = 100.0
 
 
-def percentage_of(reference_value, reference_percentage):
+def percentage_of(reference_value: float, reference_percentage: float) -> float:
     """Returns the reference percentage of the reference value."""
     return (reference_value * reference_percentage) / PERCENT
 
 
-def increase(reference_value, increasing_percentage):
+def increase(reference_value: float, increasing_percentage: float) -> float:
     """Returns the increase in the reference value by a increasing percentage."""
     return (
         reference_value
@@ -19,7 +19,7 @@ def increase(reference_value, increasing_percentage):
     )
 
 
-def discount(reference_value, discounting_percentage):
+def discount(reference_value: float, discounting_percentage: float) -> float:
     """Returns the discount in the reference value by a discounting percentage."""
     return (
         reference_value
@@ -29,7 +29,7 @@ def discount(reference_value, discounting_percentage):
 
 def percentage_menu():
 
-    user_input: str
+    user_input: str = '0'
     value_input_y: float
     value_input_x: float
 

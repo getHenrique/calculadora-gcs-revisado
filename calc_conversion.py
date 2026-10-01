@@ -3,13 +3,13 @@
 
 from value_inputs import get_single_float
 
-CELSIUS_FAHRENHEIT_SCALING_FACTOR = 9 / 5
-CELSIUS_FAHRENHEIT_OFFSET = 32
-KILOMETERS_TO_MILES = 0.621371
-KILOGRAMS_TO_POUNDS = 2.20462
+CELSIUS_FAHRENHEIT_SCALING_FACTOR: float = 9 / 5
+CELSIUS_FAHRENHEIT_OFFSET: int = 32
+KILOMETERS_TO_MILES: float = 0.621371
+KILOGRAMS_TO_POUNDS: float = 2.20462
 
 
-def convert_celsius_fahrenheit(celsius_temperature):
+def convert_celsius_fahrenheit(celsius_temperature: float) -> float:
     """Returns the conversion of a temperature from celsius to fahrenheit."""
     return (
         celsius_temperature * CELSIUS_FAHRENHEIT_SCALING_FACTOR
@@ -17,19 +17,19 @@ def convert_celsius_fahrenheit(celsius_temperature):
     )
 
 
-def convert_kilometers_miles(kilometers_distance):
+def convert_kilometers_miles(kilometers_distance: float) -> float:
     """Returns the conversion of a distance from kilometers to miles."""
     return kilometers_distance / KILOMETERS_TO_MILES
 
 
-def convert_kilograms_pounds(kilograms_mass):
+def convert_kilograms_pounds(kilograms_mass: float) -> float:
     """Returns the conversion of a mass from kilograms to pounds.""" 
     return kilograms_mass * KILOGRAMS_TO_POUNDS
 
 
 def conversion_menu():
     
-    user_input: str
+    user_input: str = '0'
     value_input_x: float
 
     while user_input != '4':

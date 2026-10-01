@@ -5,7 +5,7 @@ from calc_exponenciation import square_root_of
 from value_inputs import get_number_set
 
 
-def average(number_set):
+def average(number_set: list[float]) -> float:
     """Returns the average of a set of values."""
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
@@ -13,7 +13,7 @@ def average(number_set):
         return sum(number_set) / len(number_set)
 
 
-def median(number_set):
+def median(number_set: list[float]) -> float:
     """Returns the median of a set of values."""
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
@@ -29,7 +29,7 @@ def median(number_set):
             return sorted_number_set[number_set_size // 2]
 
 
-def standard_deviation(number_set):
+def standard_deviation(number_set: list[float]) -> float:
     """Returns the standard deviation of a set of values."""
     if not number_set:
         raise ValueError("O conjunto não pode estar vazio.")
@@ -43,7 +43,7 @@ def standard_deviation(number_set):
 
 def statistics_menu():
 
-    user_input: str
+    user_input: str = '0'
     number_set: list[float]
 
     while user_input != '4':

@@ -9,7 +9,7 @@ from calc_conversion import conversion_menu
 
 def main_menu():
 
-    user_input = '0'
+    user_input: str = '0'
 
     print("\n=== Calculadora GCS ===\n")
     while user_input != 'x':

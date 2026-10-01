@@ -4,22 +4,22 @@
 from value_inputs import get_two_floats
 
 
-def add(addend_a, addend_b):
+def add(addend_a: float, addend_b: float) -> float:
     """Returns the sum of addend a and addend b."""
     return addend_a + addend_b
 
 
-def subtract(minuend, subtrahend):
+def subtract(minuend: float, subtrahend: float) -> float:
     """Returns the difference between the minuend and the subtrahend."""
     return minuend - subtrahend
 
 
-def multiply(factor_a, factor_b):
+def multiply(factor_a: float, factor_b: float) -> float:
     """Returns the product of factor a and factor b."""
     return factor_a * factor_b
 
 
-def divide(dividend, divisor):
+def divide(dividend: float, divisor: float) -> float:
     """
     Returns the quocient of the division between the dividend and the divisor.
     Throws ZeroDivisionError if the divisor is 0.
@@ -31,7 +31,7 @@ def divide(dividend, divisor):
 
 def basics_menu():
 
-    user_input = '0'
+    user_input: str = '0'
     value_input_a: float
     value_input_b: float
 
