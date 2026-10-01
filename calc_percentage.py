@@ -43,8 +43,8 @@ def percentage_menu():
         )
         match user_input:
             case '1':
-                print("\nPercentual Y de X")
-                value_input_x, value_input_y = get_two_floats("X = ", "Y% =")
+                print("\nPercentual Y% de X")
+                value_input_y, value_input_x = get_two_floats("Y% = ", "X = ")
                 print(
                     "Y% de X = ",
                     percentage_of(
@@ -54,8 +54,8 @@ def percentage_menu():
                     "\n"
                 )
             case '2':
-                print("\nAcrescentar percentual Y à X")
-                value_input_x, value_input_y = get_two_floats("X = ", "Y% =")
+                print("\nAcrescentar percentual Y% à X")
+                value_input_y, value_input_x = get_two_floats("Y% = ", "X = ")
                 print(
                     "X + (X de Y%) = ",
                     increase(
@@ -65,8 +65,8 @@ def percentage_menu():
                     "\n"
                 )
             case '3':
-                print("\nDescontar percentual Y de X")
-                value_input_x, value_input_y = get_two_floats("X = ", "Y% =")
+                print("\nDescontar percentual Y% de X")
+                value_input_y, value_input_x = get_two_floats("Y% = ", "X = ")
                 print(
                     "X - (X de Y%) = ",
                     discount(
