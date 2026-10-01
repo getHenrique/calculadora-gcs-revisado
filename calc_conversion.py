@@ -1,6 +1,8 @@
 # calc_conversion
 # Module E - Conversion operations
 
+from value_inputs import get_single_float
+
 CELSIUS_FAHRENHEIT_SCALING_FACTOR = 9 / 5
 CELSIUS_FAHRENHEIT_OFFSET = 32
 KILOMETERS_TO_MILES = 0.621371
@@ -27,7 +29,8 @@ def convert_kilograms_pounds(kilograms_mass):
 
 def conversion_menu():
     
-    user_input = '0'
+    user_input: str
+    value_input_x: float
 
     while user_input != '4':
         user_input = input(    
@@ -40,33 +43,30 @@ def conversion_menu():
         match user_input:
             case '1':
                 print("\nXºC para XºF")
+                value_input_x = get_single_float("XºC = ")
                 print(
                     "XºF = ",
-                    convert_celsius_fahrenheit(
-                        float(input("XºC = ")),
-                    ),
+                    convert_celsius_fahrenheit(value_input_x),
                     "\n"
                 )
             case '2':
                 print("\nXkm para X milhas")
+                value_input_x = get_single_float("XKm = ")
                 print(
                     "X milhas = ",
-                    convert_kilometers_miles(
-                        float(input("Xkm = ")),
-                    ),
+                    convert_kilometers_miles(value_input_x),
                     "\n"
                 )
             case '3':
                 print("\nXkg para X libras")
+                value_input_x = get_single_float("XKg = ")
                 print(
                     "X libras = ",
-                    convert_kilograms_pounds(
-                        float(input("Xkg = ")),
-                    ),
+                    convert_kilograms_pounds(value_input_x),
                     "\n"
                 )
             case '4':
                 print("Saindo do módulo...\n")
                 break
             case _:
-                print("Input inválido\n")
+                print("Entrada inválida!\n")

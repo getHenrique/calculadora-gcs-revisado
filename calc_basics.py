@@ -1,6 +1,8 @@
 # calc_basics
 # Module A - Basic Operations
 
+from value_inputs import get_two_floats
+
 
 def add(addend_a, addend_b):
     """Returns the sum of addend a and addend b."""
@@ -30,6 +32,8 @@ def divide(dividend, divisor):
 def basics_menu():
 
     user_input = '0'
+    value_input_a: float
+    value_input_b: float
 
     while user_input != '5':
         user_input = input(    
@@ -43,41 +47,45 @@ def basics_menu():
         match user_input:
             case '1':
                 print("\nSomando A + B")
+                value_input_a, value_input_b = get_two_floats()
                 print(
                     "A + B = ",
                     add(
-                        float(input("A = ")),
-                        float(input("B = "))
+                        value_input_a,
+                        value_input_b
                     ),
                     "\n"
                 )
             case '2':
                 print("\nSubtraindo A - B")
+                value_input_a, value_input_b = get_two_floats()
                 print(
                     "A - B = ",
                     subtract(
-                        float(input("A = ")),
-                        float(input("B = "))
+                        value_input_a,
+                        value_input_b
                     ),
                     "\n"
                 )
             case '3':
                 print("\nMultiplicando A * B")
+                value_input_a, value_input_b = get_two_floats()
                 print(
                     "A * B = ",
                     multiply(
-                        float(input("A = ")),
-                        float(input("B = "))
+                        value_input_a,
+                        value_input_b
                     ),
                     "\n"
                 )
             case '4':
                 print("\nDividindo A / B")
+                value_input_a, value_input_b = get_two_floats()
                 print(
                     "A / B = ",
                     divide(
-                        float(input("A = ")),
-                        float(input("B = "))
+                        value_input_a,
+                        value_input_b
                     ),
                     "\n"
                 )
@@ -85,4 +93,4 @@ def basics_menu():
                 print("Saindo do módulo...\n")
                 break
             case _:
-                print("Input inválido\n")
+                print("Entrada inválida!\n")

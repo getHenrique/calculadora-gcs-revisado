@@ -37,7 +37,7 @@ def main_menu():
                 print("Tenha um ótimo dia! :)")
                 break
             case _:
-                print("Input inválido\n")
+                print("Entrada inválida!\n")
 
 
 if __name__ == "__main__":

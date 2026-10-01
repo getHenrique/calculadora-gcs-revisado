@@ -1,6 +1,8 @@
 # calc_exponenciation
 # Module B - Exponenciation and root extraction operations
 
+from value_inputs import get_single_float, get_two_floats
+
 SQUARE_ROOT_EXPONENT = 1 / 2
 CUBE_ROOT_EXPONENT = 1 / 3
 
@@ -22,7 +24,10 @@ def cube_root_of(radicand):
 
 def exponenciation_menu():
 
-    user_input = '0'
+    user_input: str
+    value_input_a: float
+    value_input_b: float
+    value_input_x: float
     
     while user_input != '4':
         user_input = input(    
@@ -35,30 +40,33 @@ def exponenciation_menu():
         match user_input:
             case '1':
                 print("\nPotência de A^B")
+                value_input_a, value_input_b = get_two_floats()
                 print(
                     "A^B = ",
                     to_power_of(
-                        float(input("A = ")),
-                        float(input("B = "))
+                        value_input_a,
+                        value_input_b
                     ),
                     "\n"
                 )
             case '2':
                 print("\nRaiz quadrada de X")
+                value_input_x = get_single_float()
                 print(
                     "√X = ",
-                    square_root_of(float(input("X = "))),
+                    square_root_of(value_input_x),
                     "\n"
                 )
             case '3':
                 print("\nRaiz cúbica de X")
+                value_input_x = get_single_float()
                 print(
                     "∛X = ",
-                    cube_root_of(float(input("X = "))),
+                    cube_root_of(value_input_x),
                     "\n"
                 )
             case '4':
                 print("Saindo do módulo...\n")
                 break
             case _:
-                print("Input inválido\n")
+                print("Entrada inválida!\n")

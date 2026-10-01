@@ -1,6 +1,8 @@
 # calc_percentage
 # Module C - Percentage operations
 
+from value_inputs import get_two_floats
+
 PERCENT = 100
 
 
@@ -27,7 +29,9 @@ def discount(reference_value, discounting_percentage):
 
 def percentage_menu():
 
-    user_input = '0'
+    user_input: str
+    value_input_y: float
+    value_input_x: float
 
     while user_input != '4':
         user_input = input(    
@@ -40,31 +44,34 @@ def percentage_menu():
         match user_input:
             case '1':
                 print("\nPercentual Y de X")
+                value_input_x, value_input_y = get_two_floats("X = ", "Y% =")
                 print(
                     "Y% de X = ",
                     percentage_of(
-                        float(input("X = ")),
-                        float(input("Y% = "))
+                        value_input_x,
+                        value_input_y
                     ),
                     "\n"
                 )
             case '2':
                 print("\nAcrescentar percentual Y à X")
+                value_input_x, value_input_y = get_two_floats("X = ", "Y% =")
                 print(
                     "X + (X de Y%) = ",
                     increase(
-                        float(input("X = ")),
-                        float(input("Y% = "))
+                        value_input_x,
+                        value_input_y
                     ),
                     "\n"
                 )
             case '3':
                 print("\nDescontar percentual Y de X")
+                value_input_x, value_input_y = get_two_floats("X = ", "Y% =")
                 print(
                     "X - (X de Y%) = ",
                     discount(
-                        float(input("X = ")),
-                        float(input("Y% = "))
+                        value_input_x,
+                        value_input_y
                     ),
                     "\n"
                 )
@@ -72,4 +79,4 @@ def percentage_menu():
                 print("Saindo do módulo...\n")
                 break
             case _:
-                print("Input inválido\n")
+                print("Entrada inválida!\n")

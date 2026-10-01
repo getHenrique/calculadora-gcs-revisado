@@ -2,6 +2,7 @@
 # Module D - Statistics operations
 
 from calc_exponenciation import square_root_of
+from value_inputs import get_number_set
 
 
 def average(number_set):
@@ -40,17 +41,10 @@ def standard_deviation(number_set):
         )
 
 
-def get_number_set():
-    number_set = input(
-        "Insira os números do conjunto separados por espaço:\n"
-    ).split()
-    number_set = [float(value) for value in number_set]
-    return number_set
-
-
 def statistics_menu():
 
-    user_input = '0'
+    user_input: str
+    number_set: list[float]
 
     while user_input != '4':
         user_input = input(    
@@ -95,4 +89,4 @@ def statistics_menu():
                 print("Saindo do módulo...\n")
                 break
             case _:
-                print("Input inválido\n")
+                print("Entrada inválida!\n")
