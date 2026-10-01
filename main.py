@@ -1,10 +1,10 @@
 # main menu
 
 from calc_basics import basics_menu
+from calc_conversion import conversion_menu
 from calc_exponenciation import exponenciation_menu
 from calc_percentage import percentage_menu
 from calc_statistics import statistics_menu
-from calc_conversion import conversion_menu
 
 
 def main_menu():
